@@ -24,8 +24,10 @@
                 <a class="nav__link" href="#">Work</a>
                 <a class="nav__link" href="#">Contact</a>
                 <a class="nav__link" href="/article">Article</a>
-                <a class="nav__link" href="/reg">Reg</a>
-                <a class="nav__link" href="/auth">Auth</a>
+                <form action="/logout" method="post">
+                    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+                    <input class="nav__link" type="submit" value="Sign Out"/>
+                </form>
             </nav>
 
         </div>
@@ -52,6 +54,8 @@
             </div>
 
             <br>
+
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}">
 
             <button class="btn" type="submit">Add</button>
         </form>
