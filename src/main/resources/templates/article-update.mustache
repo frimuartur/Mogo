@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Article-update</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body>
+
+<!--- INIT HEADER ---->
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo">AF</div>
+
+            <nav class="nav">
+                <a class="nav__link" href="/">Home</a>
+                <a class="nav__link" href="#">About</a>
+                <a class="nav__link" href="#">Service</a>
+                <a class="nav__link" href="#">Blog</a>
+                <a class="nav__link" href="#">Work</a>
+                <a class="nav__link" href="#">Contact</a>
+                <a class="nav__link" href="/article">Article</a>
+            </nav>
+
+        </div>
+    </div>
+</header>
+
+<!--- FINISH HEADER ---->
+
+<!--- INIT CONTENT ---->
+
+
+<div class="article">
+    <div class="container">
+{{#article}}
+        <form method="post">
+
+            <div class="article__title">
+                <label for="article__title">Update post</label>
+                <input type="text"name="title" id="article__title" value="{{text}}">
+            </div>
+
+            <div class="article__text">
+                <label for="article__text">Update text</label>
+                <textarea name="text" id="article__text">{{title}}</textarea>
+            </div>
+
+            <br>
+
+            <button class="btn" type="submit">Update</button>
+
+        </form>
+{{/article}}
+
+    </div>
+</div>
+
+
+<!--- FINISH CONTENT ---->
+
+</body>
+</html>

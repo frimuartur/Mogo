@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Reg</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Anton&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/bootstrap.css">
+    </head>
+    <body>
+
+    <!--- INIT HEADER ---->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">AF</div>
+
+                <nav class="nav">
+                    <a class="nav__link" href="/reg">Registration</a>
+                    <a class="nav__link" href="/auth">Authentification</a>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    <!--- FINISH HEADER ---->
+           
+
+        <div class="form__reg">
+            <h1 class="form__title">Registration</h1>
+
+            <form action="/auth" method="post">
+                <div class="form__group">
+                    <input type="text" name="name" id="name" placeholder="Your name" required maxlength="15" minlength="3"> 
+                </div>
+
+                <div class="form__group">
+                    <input type="text" name="surname" id="surname" placeholder="Your surname" required maxlength="15" minlength="3"> 
+                </div>
+
+                <div class="form__group">
+                    <input type="email" name="email" id="email" placeholder="Your email" required>
+                </div>
+
+                <div class="form__group">
+                    <input type="password" name="password" id="password" placeholder="Your password" required maxlength="8" minlength="8">
+                </div>
+
+                <div class="form__group" id="form__group">
+                    <select class="data">
+                        <option disabled selected>Date</option>
+                        <option>02</option>
+                        <option>17</option>
+                        <option>22</option>
+                        <option>28</option>
+                    </select> 
+                   
+                    <select class="data mese">
+                        <option  disabled selected>Month</option>
+                        <option>Ianuarie</option>
+                        <option>Iunie</option>
+                        <option>Octombrie</option>
+                        <option>Noiembrie</option>
+                    </select>
+
+                    <select class="data">
+                        <option disabled selected>Year</option>
+                        <option>1976</option>
+                        <option>1980</option>
+                        <option>2000</option>
+                        <option>2005</option>
+                    </select>
+                    
+                </div>
+
+                <div class="form__group" id="form__group">
+                    <label for="male">Man</label>
+                    <input type="radio" name="choose_sex" id="male" required>
+
+                    <label for="female">Woman</label>
+                    <input type="radio" name="choose_sex" id="female" required>
+                </div>
+
+<!--                <button class="btn" type="submit">Sing In</button>-->
+
+            </form>
+            <a class="btn" href="/auth">Sing In</a>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,294 @@
+body {
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Akaya Kanadaka', cursive;
+    background-color: #fff;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+p {
+    margin: 0;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+/* HEADER */
+
+.header {
+    padding-top: 30px;
+
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 2px solid rgb(170, 140, 204);
+}
+
+.header__logo {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* NAVIGATION */
+
+.nav {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.nav__link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 15px;
+
+    text-decoration: none;
+    color: #333;
+    transition: color .2s linear;
+}
+
+.nav__link:hover {
+    color: blueviolet;
+}
+
+
+
+
+
+/* FORM */
+
+.form__reg {
+    position: absolute;
+    top: 100px;
+    left: 35%;
+
+    width: 300px;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #fff;
+
+    border: 1px solid rgb(170, 140, 204);
+
+}
+
+.form__title {
+    color: rgb(47, 46, 46);
+    font-family: 'Akaya Kanadaka', cursive;
+}
+
+.form__group {
+    margin: 20px auto;
+    width: inherit;
+}
+
+#form__group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__group input {
+    font-family: 'Akaya Kanadaka', cursive;
+    padding: 10px;
+    border: 1px solid rgb(170, 140, 204);
+    width: 280px;
+    border-radius: 20px;
+}
+
+.form__group input:hover {
+    border: 1px solid rgb(65, 4, 134);
+    border-radius: 20px;
+    background-color: rgb(237, 232, 240);
+}
+
+.form__group input:focus{
+    outline: none;
+    border: 1px solid rgb(149, 34, 34);
+    border-radius: 20px;
+    background-color: rgb(237, 232, 240);
+}
+
+.form__group select {
+    padding: 10px;
+    border: 1px solid rgb(170, 140, 204);
+    border-radius: 20px;
+}
+.data {
+    padding: 10px;
+    border: 1px solid rgb(170, 140, 204);
+    width: 80px;
+    border-radius: 20px;
+}
+.data.mese  {
+    padding: 10px;
+    border: 1px solid rgb(170, 140, 204);
+    width: 110px;
+    border-radius: 20px;
+}
+
+.form__group select:focus {
+    outline: none;
+}
+
+
+
+.btn {
+    outline: none;
+    text-transform: uppercase;
+    padding: 10px;
+
+    font-size: 20px;
+    font-family: 'Akaya Kanadaka', cursive;
+
+    border-radius: 20px;
+
+    border-color: #333;
+    color: #fff;
+    background-color: rgb(73, 69, 69);
+}
+
+.btn__delete {
+    position: absolute;
+    top:10px;
+    right: 10px;
+}
+
+.btn__update {
+    position: absolute;
+    top:10px;
+    left: 10px;
+}
+
+.btn:hover {
+    text-transform: uppercase;
+    padding: 10px;
+
+    border-radius: 20px;
+
+
+    color: #333;
+    background-color: rgb(255, 255, 255);
+}
+
+.btn:focus {
+    outline: none;
+    text-transform: uppercase;
+    padding: 10px;
+
+    border-radius: 20px;
+
+
+    color: #333;
+    background-color: rgb(255, 255, 255);
+}
+
+
+/* Article */
+
+.article {
+    position: relative;
+    top: 100px;
+
+    width: 600px;
+    margin: 0 auto;
+
+    padding-top: 20px;
+    text-align: center;
+}
+
+.article label {
+    font-size: 25px;
+}
+
+.article__title input {
+    display: block;
+
+    font-family: 'Akaya Kanadaka', cursive;
+    font-size: 18px;
+
+    width: 600px;
+    margin: 0 auto;
+    margin-bottom: 20px ;
+    height: 30px;
+    padding: 10px;
+
+    border-radius: 30px;
+    border: 1px solid rgb(44, 16, 16);
+}
+
+.article__title input:hover {
+    border: 1px solid rgb(138, 15, 15);
+    background-color: rgb(237, 232, 240);
+}
+
+.article__title input:focus {
+    outline: none;
+    border: 1px solid rgb(138, 15, 15);
+    background-color: rgb(237, 232, 240);
+}
+
+.article__text textarea {
+    display: block;
+
+    font-family: 'Akaya Kanadaka', cursive;
+    font-size: 18px;
+
+    width: 600px;
+    margin: 0 auto;
+    height: 100px;
+    padding: 10px;
+
+    border-radius: 30px;
+    border: 1px solid rgb(44, 16, 16);
+}
+
+.article__text textarea:hover {
+    border: 1px solid rgb(138, 15, 15);
+    background-color: rgb(237, 232, 240);
+}
+
+.article__text textarea:focus {
+    outline: none;
+    border: 1px solid rgb(138, 15, 15);
+    background-color: rgb(237, 232, 240);
+}
+
+.cont {
+    position: relative;
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+
+    border: 1px solid rgb(48, 13, 93);
+    border-radius: 30px;
+    border: 1px solid rgb(44, 16, 16);
+}
+
+
+
+.title {
+    padding: 10px;
+}
+
+.text {
+    padding: 10px;
+}
+
