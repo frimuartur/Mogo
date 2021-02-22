@@ -197,7 +197,7 @@ a{
 
 .article {
     position: relative;
-    top: 100px;
+    top: 0px;
 
     width: 600px;
     margin: 0 auto;
