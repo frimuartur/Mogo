@@ -1,41 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <meta charset="utf-8">
         <title>Registration</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Anton&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" href="/css/bootstrap.css">
+        <div th:replace="blocks/link_css :: link_css"></div>
     </head>
     <body>
 
     <!--- INIT HEADER ---->
-    <header class="header">
-        <div class="container">
-            <div class="header__inner">
-                <div class="header__logo">AF</div>
-
-                <nav class="nav">
-                    <a class="nav__link" href="/">Home</a>
-                    <a class="nav__link" href="#">About</a>
-                    <a class="nav__link" href="#">Service</a>
-                    <a class="nav__link" href="#">Blog</a>
-                    <a class="nav__link" href="#">Work</a>
-                    <a class="nav__link" href="#">Contact</a>
-                    <a class="nav__link" href="/article">Article</a>
-                    <a class="nav__link" href="/login">Login</a>
-                </nav>
-
-            </div>
-        </div>
-    </header>
+    <header th:replace="blocks/header :: header"></header>
 
     <!--- FINISH HEADER ---->
         <div class="form__reg">
             <h1 class="form__title">Registration</h1>
 
-            <form action="/reg" method="post">
+            <form th:action="@{/reg}" method="post">
                 <div class="form__group">
                     <input type="text" name="username" id="name" placeholder="Your username" required maxlength="15" minlength="3">
                 </div>
@@ -52,7 +30,7 @@
                     <input type="password" name="password" id="password" placeholder="Your password" required maxlength="8" minlength="8">
                 </div>
 
-                <div class="form__group" id="form__group">
+                <div class="form__group">
                     <select class="data">
                         <option disabled selected>Date</option>
                         <option>02</option>
@@ -79,7 +57,7 @@
                     
                 </div>
 
-                <div class="form__group" id="form__group">
+                <div class="form__group">
                     <label for="male">Man</label>
                     <input type="radio" name="choose_sex" id="male" required>
 
@@ -88,7 +66,6 @@
                 </div>
 
                 <div>
-                    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
                     <input class="btn" type="submit" value="Sing In">
                 </div>
 

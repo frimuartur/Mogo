@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Article</title>
+    <div th:replace="blocks/link_css :: link_css"></div>
+</head>
+<body>
+
+<!--- INIT HEADER ---->
+<header th:replace="blocks/header :: header"></header>
+<!--- FINISH HEADER ---->
+
+<!--- INIT CONTENT ---->
+<div class="article">
+    <div class="container">
+        <form th:action="@{/article-add}" method="POST">
+
+            <div class="article__title">
+                <label for="article__title">Title of post</label>
+                <input type="text"name="title" id="article__title" placeholder="Add title article here...">
+            </div>
+
+            <div class="article__text">
+                <label for="article__text">Text</label>
+                <textarea name="text" id="article__text" placeholder="Add text article here..."></textarea>
+            </div>
+
+            <br>
+            <div>
+                <button class="btn" type="submit">Add</button>
+            </div>
+        </form>
+
+
+            <div class="cont" th:each="row : ${article}">
+
+                <div class="title">
+                    <h1 th:text="${row.text}"/>
+                </div>
+
+                <div class="text">
+                    <p th:text="${row.title}"/>
+                </div>
+
+                <div class="btn__delete">
+                    <form th:action="@{/article/} + ${row.id} + @{/delete}" method="post">
+                        <button class="btn" type="submit" >Delete</button>
+                    </form>
+                </div>
+
+                <div class="btn__update">
+                        <a class="btn" type="submit" th:href="@{/article/} + ${row.id}">Update</a>
+                </div>
+
+            </div>
+            <br><br><br>
+    </div>
+</div>
+
+
+<!--- FINISH CONTENT ---->
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!--- INIT HEADER ---->
+    <header class="header" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" th:fragment="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">AF</div>
+
+                <nav class="nav">
+                    <a class="nav__link" href="/">Home</a>
+                    <a class="nav__link" href="#">About</a>
+                    <a class="nav__link" href="#">Service</a>
+                    <a class="nav__link" href="#">Blog</a>
+                    <a class="nav__link" href="#">Work</a>
+                    <a class="nav__link" href="#">Contact</a>
+                    <a class="nav__link" href="/article">Article</a>
+                </nav>
+                <div sec:authorize="!isFullyAuthenticated()">
+                    <a class="btn" href="/reg">Registration</a>
+                    <a class="btn" href="/login">Authentification</a>
+                </div>
+
+                <div sec:authorize="isFullyAuthenticated()">
+                    <form th:action="@{/logout}" method="post">
+                        <input class="btn" type="submit" value="Sign Out"/>
+                    </form>
+                </div>
+
+
+
+            </div>
+        </div>
+    </header>
+<!--- FINISH HEADER ---->

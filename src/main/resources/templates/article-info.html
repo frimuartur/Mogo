@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Article-info</title>
+    <div th:replace="blocks/link_css :: link_css"></div>
+</head>
+<body>
+
+<!--- INIT HEADER ---->
+<header th:replace="blocks/header :: header"></header>
+
+<!--- FINISH HEADER ---->
+
+<!--- INIT CONTENT ---->
+
+
+<div class="article">
+    <div class="container">
+
+            <div class="cont" th:each="art : ${articles}">
+
+                <div class="title">
+                    <h1 th:text="${art.text}"/>
+                </div>
+
+                <div class="text">
+                    <p th:text="${art.title}"/>
+                </div>
+
+                <div class="btn__delete">
+                    <form th:action="@{/article/} + ${art.id} + @{/delete}" method="post">
+                        <button class="btn" type="submit" >Delete</button>
+                    </form>
+                </div>
+
+                <div class="btn__update">
+                    <a class="btn" type="submit" th:href="@{/article/} + ${art.id} + @{/update}">Update</a>
+                </div>
+
+            </div>
+        <br><br><br>
+    </div>
+</div>
+
+
+<!--- FINISH CONTENT ---->
+
+</body>
+</html>

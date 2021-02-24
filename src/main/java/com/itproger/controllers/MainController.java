@@ -7,6 +7,7 @@ import com.itproger.repo.ArticleRepository;
 import com.itproger.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Map;
 import java.util.Optional;
 
 @Controller
@@ -27,25 +27,26 @@ public class MainController {
     private UserRepository userRepository;
 
     @GetMapping("/")
-    public String home(Map<String, Object> model) {
+    public String home(Model model) {
+        model.addAttribute("title", "Home");
         return "home";
     }
 
     @GetMapping("/login")
-    public String login(Map<String, Object> model) {
+    public String login(Model model) {
         return "login";
     }
 
     @GetMapping("/article")
-    public String article(Map<String, Object> model) {
+    public String article(Model model) {
         Iterable<Article> articles = articleRepository.findAll();
-        model.put("article",articles);
+        model.addAttribute("article",articles);
         return "article";
     }
 
 
     @PostMapping("/article-add")
-    public String articleAdd(@RequestParam String title,@RequestParam String text, Map<String, Object> model){
+    public String articleAdd(@RequestParam String title,@RequestParam String text, Model model){
         Article article = new Article(title,text);
         articleRepository.save(article);
 
@@ -55,29 +56,29 @@ public class MainController {
 
 
     @GetMapping("/article/{id}")
-    public String articleInfo(@PathVariable(value = "id") long id, Map<String, Object> model ){
+    public String articleInfo(@PathVariable(value = "id") long id, Model model){
         Optional<Article> article = articleRepository.findById(id);
 
         ArrayList<Article> result = new ArrayList<>();
         article.ifPresent(result::add);
 
-        model.put("articles", result);
+        model.addAttribute("articles", result);
         return "article-info";
     }
 
     @GetMapping("/article/{id}/update")
-    public String articleUpdate(@PathVariable(value = "id") long id, Map<String, Object> model ){
+    public String articleUpdate(@PathVariable(value = "id") long id, Model model){
         Optional<Article> article = articleRepository.findById(id);
 
         ArrayList<Article> result = new ArrayList<>();
         article.ifPresent(result::add);
 
-        model.put("article", result);
+        model.addAttribute("article", result);
         return "article-update";
     }
 
     @PostMapping("/article/{id}/update")
-    public String articleUpdateForm(@PathVariable(value = "id") long id, @RequestParam String title,@RequestParam String text, Map<String, Object> model) throws ClassNotFoundException{
+    public String articleUpdateForm(@PathVariable(value = "id") long id, @RequestParam String title,@RequestParam String text, Model model) throws ClassNotFoundException{
         Article article = articleRepository.findById(id)
                 .orElseThrow(() -> new ClassNotFoundException());
         article.setTitle(text);
@@ -88,7 +89,7 @@ public class MainController {
     }
 
     @PostMapping("/article/{id}/delete")
-    public String articleDelete(@PathVariable(value = "id") long id, Map<String, Object> model) throws ClassNotFoundException {
+    public String articleDelete(@PathVariable(value = "id") long id, Model model) throws ClassNotFoundException {
         Article article = articleRepository.findById(id)
                 .orElseThrow(() -> new ClassNotFoundException());
 
@@ -97,12 +98,12 @@ public class MainController {
     }
 
     @GetMapping("/reg")
-    public String reg(Map<String, Object> model){
+    public String reg(Model model){
         return "reg";
     }
 
     @PostMapping("/reg")
-    public String addUser(User user, Map<String, Object> model){
+    public String addUser(User user, Model model){
         user.setEnabled(true);
         user.setRoles(Collections.singleton(Role.USER));
         userRepository.save(user);

@@ -14,8 +14,6 @@ public class Article {
 
     private String text, title;
 
-
-
     public Long getId() {
         return id;
     }

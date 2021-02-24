@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Article-update</title>
+    <div th:replace="blocks/link_css :: link_css"></div>
+
+</head>
+<body>
+
+<!--- INIT HEADER ---->
+<header th:replace="blocks/header :: header"></header>
+
+<!--- FINISH HEADER ---->
+
+<!--- INIT CONTENT ---->
+
+
+<div class="article">
+    <div class="container" th:each="art : ${article}">
+        <form th:action="@{/article/} + ${art.id} + @{/update}" method="post">
+
+            <div class="article__title">
+                <label for="article__title">Update post</label>
+                <input type="text"name="title" id="article__title" th:value="${art.text}">
+            </div>
+
+            <div class="article__text">
+                <label for="article__text">Update text</label>
+                <textarea name="text" id="article__text" th:text="${art.title}" />
+            </div>   <br>
+
+            <button class="btn" type="submit">Update</button>
+
+        </form>
+    </div>
+</div>
+
+
+<!--- FINISH CONTENT ---->
+
+</body>
+</html>

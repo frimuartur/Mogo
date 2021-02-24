@@ -1,0 +1,90 @@
+/* Article */
+
+.article {
+    position: relative;
+    top: 0px;
+
+    width: 600px;
+    margin: 0 auto;
+
+    padding-top: 20px;
+    text-align: center;
+}
+
+.article label {
+    font-size: 25px;
+}
+
+.article__title input {
+    display: block;
+
+    font-family: 'Akaya Kanadaka', cursive;
+    font-size: 18px;
+
+    width: 600px;
+    margin: 0 auto;
+    margin-bottom: 20px ;
+    height: 30px;
+    padding: 10px;
+
+    border-radius: 30px;
+    border: 1px solid rgb(44, 16, 16);
+}
+
+.article__title input:hover {
+    border: 1px solid rgb(138, 15, 15);
+    background-color: rgb(237, 232, 240);
+}
+
+.article__title input:focus {
+    outline: none;
+    border: 1px solid rgb(138, 15, 15);
+    background-color: rgb(237, 232, 240);
+}
+
+.article__text textarea {
+    display: block;
+
+    font-family: 'Akaya Kanadaka', cursive;
+    font-size: 18px;
+
+    width: 600px;
+    margin: 0 auto;
+    height: 100px;
+    padding: 10px;
+
+    border-radius: 30px;
+    border: 1px solid rgb(44, 16, 16);
+}
+
+.article__text textarea:hover {
+    border: 1px solid rgb(138, 15, 15);
+    background-color: rgb(237, 232, 240);
+}
+
+.article__text textarea:focus {
+    outline: none;
+    border: 1px solid rgb(138, 15, 15);
+    background-color: rgb(237, 232, 240);
+}
+
+.cont {
+    position: relative;
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+
+    border: 1px solid rgb(48, 13, 93);
+    border-radius: 30px;
+    border: 1px solid rgb(44, 16, 16);
+}
+
+
+
+.title {
+    padding: 10px;
+}
+
+.text {
+    padding: 10px;
+}
