@@ -8,7 +8,7 @@
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background: url(../intro.jpg) center no-repeat;
+    background: linear-gradient(-30deg, #1ec4e9 0%,#673ab7 50%, #262626 50%, #607d8b 100%);
     background-size: cover;
 }
 
@@ -41,6 +41,7 @@
 
 .intro__suptitle {
     margin-bottom: 20px;
+    margin-top: 100px;
     font-size: 72px;
     color: #fff;
     font-family: 'Kaushan Script', cursive;

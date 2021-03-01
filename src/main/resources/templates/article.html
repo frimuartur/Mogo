@@ -27,7 +27,7 @@
 
             <br>
             <div>
-                <button class="btn" type="submit">Add</button>
+                <button class="btn add" type="submit">Add</button>
             </div>
         </form>
 
@@ -42,14 +42,14 @@
                     <p th:text="${row.title}"/>
                 </div>
 
-                <div class="btn__delete">
+                <div>
                     <form th:action="@{/article/} + ${row.id} + @{/delete}" method="post">
-                        <button class="btn" type="submit" >Delete</button>
+                        <button class="btn delete" type="submit" >Delete</button>
                     </form>
                 </div>
 
-                <div class="btn__update">
-                        <a class="btn" type="submit" th:href="@{/article/} + ${row.id}">Update</a>
+                <div>
+                        <a class="btn update" type="submit" th:href="@{/article/} + ${row.id}">Update</a>
                 </div>
 
             </div>
